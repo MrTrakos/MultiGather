@@ -1,0 +1,9 @@
+README.md
+pyproject.toml
+MultiGather/Client.py
+MultiGather/Types.py
+MultiGather/__init__.py
+MultiGather.egg-info/PKG-INFO
+MultiGather.egg-info/SOURCES.txt
+MultiGather.egg-info/dependency_links.txt
+MultiGather.egg-info/top_level.txt
