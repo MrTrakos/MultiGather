@@ -56,3 +56,28 @@ async def main():
 
 asyncio.run(main())
 ```
+
+**Simple example for use proxy:**
+```python
+import asyncio
+from MultiGather import Client
+from MultiGather.Types import Config, Request
+# Replace with the actual URL for your GET endpoint
+url = "https://your-api-endpoint/posts"
+proxy = "scheme://ip:port"
+
+async def main():
+    client = Client.Connection(Config(timeout=10, proxy=proxy))  # Set timeout to 10 seconds (optional)
+
+    # Prepare a GET request object
+    get_request = Request(method="GET", url=url, amount=5) # send 5 requests.
+
+    # Send the requests asynchronously and collect responses
+    responses = await client.sendRequest(get_request)
+
+    # Print the status code for each response
+    for response in responses:
+        print(f"GET response status: {response.status}")
+
+asyncio.run(main())
+```
