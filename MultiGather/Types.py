@@ -1,11 +1,13 @@
 from dataclasses import dataclass
-from typing import Dict, Optional
+from typing import Dict, Optional, Union
 
 @dataclass
 class Config:
     timeout: int = 25
     redirect: bool = False
     max_connection_limit: int = 1000
+    proxy: Optional[Union[str, Dict[str, str]]] = None  # Support for proxy
+
 @dataclass
 class Request:
     url: str
