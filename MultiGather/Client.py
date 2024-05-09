@@ -31,4 +31,3 @@ class Connection:
             return Response(status=609, url=request.url, headers={}, content=str(e), exception=True)
         except Exception as e:
             return Response(status=609, url=request.url, headers={}, content=str(e), exception=True)
-

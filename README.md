@@ -12,7 +12,7 @@ import asyncio
 from MultiGather import Client
 from MultiGather.Types import Config, Request
 
-# Replace with the actual URL for your POST endpoint
+# Replace with the actual URL for your POST endpoint.
 url = "https://your-api-endpoint/posts"
 
 # Replace with the data you want to send in the POST request

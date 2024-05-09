@@ -6,7 +6,6 @@ class Config:
     timeout: int = 25
     redirect: bool = False
     max_connection_limit: int = 1000
-
 @dataclass
 class Request:
     url: str
