@@ -7,9 +7,9 @@ class Connection:
         self.request = request
 
     async def sendRequest(self, request: Request):
-        async with aiohttp.ClientSession(timeout=aiohttp.ClientTimeout(total=self.request.timeout)) as session:
+        async with aiohttp.ClientSession(connector=aiohttp.TCPConnector(limit=self.request.max_connection_limit), timeout=aiohttp.ClientTimeout(total=self.request.timeout)) as session:
             tasks = [self._sendRequest(request=request, session=session) for _ in range(request.amount)]
-            return await asyncio.gather(*tasks)  ## send Requests, and return them as generator.
+            return await asyncio.gather(*tasks)
 
     async def _sendRequest(self, session: aiohttp.ClientSession, request: Request):
         try:
@@ -31,4 +31,3 @@ class Connection:
             return Response(status=609, url=request.url, headers={}, content=str(e), exception=True)
         except Exception as e:
             return Response(status=609, url=request.url, headers={}, content=str(e), exception=True)
-        
