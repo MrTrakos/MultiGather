@@ -13,6 +13,7 @@ async def main():
     URL = "https://jsonplaceholder.typicode.com/comments/1"
     requestList = await Client.sendRequest(
         Request(
+            method='GET',
             url=URL, 
             amount=1
         )
