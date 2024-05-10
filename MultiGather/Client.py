@@ -1,6 +1,6 @@
 import aiohttp
 import asyncio
-from Types import Response, Request, Config
+from .Types import Response, Request, Config
 
 class Connection:
     def __init__(self, request: Config):

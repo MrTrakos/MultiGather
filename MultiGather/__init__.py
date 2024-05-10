@@ -6,5 +6,5 @@ VERSION = __version__
 
 __all__ = ["Client", "Types"]
 
-from Client import *
-from Types import *
+from .Client import *
+from .Types import *
